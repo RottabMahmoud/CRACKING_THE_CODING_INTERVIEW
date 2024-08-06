@@ -170,6 +170,7 @@ myQueue.enqueue(2);
 console.log(myQueue.peek()); // Output: 1
 console.log(myQueue.dequeue()); // Output: 1
 console.log(myQueue.isEmpty()); // Output: false
+
 // 3.5 Sort Stack: Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary
 // stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations
 // push, pop, peek, and isEmpty.
@@ -314,3 +315,8 @@ console.log(shelter.dequeueAny()); // Should return the oldest animal, 'dog'
 console.log(shelter.dequeueDog()); // Should return the oldest dog
 console.log(shelter.dequeueCat()); // Should return the oldest cat
 console.log(shelter.dequeueAny()); // Should return the next oldest animal
+
+const a = { name: "Dog" };
+const b = { name: "Dog" };
+
+console.log(a === b, "WHAT");
