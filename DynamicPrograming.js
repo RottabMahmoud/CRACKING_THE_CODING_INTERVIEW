@@ -1,5 +1,27 @@
 // 8.1 Teiple Step: A child is running up a storage with n steps and can hop either 1 step, 2 steps, or 3 steps at a time,
 // Implement a method to count how many possible ways the child can run up the stairs.
+const countWays = (n) => {
+  if (n === 0) return 1; // Base case for 0 steps
+  if (n === 1) return 1; // Base case for 1 step
+  if (n === 2) return 2; // Base case for 2 steps
+
+  // Create an array to store the number of ways to reach each step
+  const dp = Array(n + 1).fill(0);
+  dp[0] = 1; // 1 way to stay at the ground level
+  dp[1] = 1; // 1 way to reach the first step
+  dp[2] = 2; // 2 ways to reach the second step
+
+  // Fill the dp array for all steps from 3 to n
+  for (let i = 3; i <= n; i++) {
+    dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
+  }
+
+  return dp[n];
+};
+
+// Example usage:
+console.log(countWays(5)); // Output: 13 (Ways to reach 5th step)
+console.log(countWays(10)); // Output: 274 (Ways to reach 10th step)
 
 // 8.2 Robot in a Grid: Imagine a robot sitting on the upper left corner of grid with r rows and c columns.
 // The robot can only move in two directions, right and down, but certain celss are "off limits" such that the robot cannot step on
