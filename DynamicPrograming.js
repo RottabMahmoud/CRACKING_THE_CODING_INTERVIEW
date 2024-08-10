@@ -61,6 +61,8 @@ console.log(countWays(10)); // Output: 274 (Ways to reach 10th step)
 // and desired boolean result value result, Implement a function to count the number of ways of parenthesizing the expression such that it evaluates
 // to result.
 
+// ----------------------------------------------------------------------------------------------------------------------------
+
 // LeetCode #121
 // BUY AND SELL STOCK
 
