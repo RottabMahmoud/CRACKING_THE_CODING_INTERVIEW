@@ -319,8 +319,6 @@ var twoSum = (nums, target) => {};
 // console.log(twoSum([1, 7, 2, 4, 6, 0], 7), " TWO SUM");
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// Three Some
-// Given an array of nums in Integers, is there is an a +b +c that equals to zero
 
 function isPalindrome(x) {
   return x == x.toString().split("").reverse().join("");
@@ -330,6 +328,8 @@ function isPalindrome(x) {
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// Three Some
+// Given an array of nums in Integers, is there is an a +b +c that equals to zero
 // Given a string find the first non-repeating character and return its index if it  doesn't exist return -1
 // find a unique of triplets that sums up to 0
 var threeSome = (nums) => {
