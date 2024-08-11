@@ -88,3 +88,41 @@ function UncontrolledForm() {
     </form>
   );
 }
+
+// Implementing INfinte scrolling behavior
+
+function infiniteScroll() {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const container = containerRef.current;
+      if (
+        container.scrollTop + container.offsetHeight >=
+        container.scrollHeight
+      ) {
+        // Fetch more data here
+      }
+    };
+
+    const container = containerRef.current;
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} style={{ height: "500px", overflow: "auto" }}>
+      {/* Render list items here */}
+    </div>
+  );
+}
+
+// useRef can be used to track scroll positions 
+// or Implement scoll-related functionality.
+
+// Example: Implementing infinite scrolling,
+// scroll-based animations, or presenting 
+// scroll positions across compontent re-renders.
