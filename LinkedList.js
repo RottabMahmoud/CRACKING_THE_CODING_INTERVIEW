@@ -314,6 +314,61 @@ const isPalindrome = (head) => {
     left = left.next;
     right = right.next;
   }
-  
+
   return true;
+};
+
+// 2. Add Two Numbers
+// You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+// You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+// Example 2:
+
+// Input: l1 = [0], l2 = [0]
+// Output: [0]
+// Example 3:
+
+// Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+// Output: [8,9,9,9,0,0,0,1]
+
+var addTwoNumbers = function (l1, l2) {
+  let on1 = l1;
+  let arr1 = [];
+  let on2 = l2;
+  let arr2 = [];
+
+  // Traverse the first linked list and store its values in arr1
+  while (on1) {
+    arr1.push(on1.val);
+    on1 = on1.next;
+  }
+
+  // Traverse the second linked list and store its values in arr2
+  while (on2) {
+    arr2.push(on2.val);
+    on2 = on2.next;
+  }
+
+  // Reverse the arrays to match the correct number format
+  arr1 = arr1.reverse();
+  arr2 = arr2.reverse();
+
+  // Convert the arrays to strings, then to numbers, and add them
+  let number1 = BigInt(arr1.join(""));
+  let number2 = BigInt(arr2.join(""));
+  let resultNumber = number1 + number2;
+
+  // Convert the result back to an array of digits (in reverse order)
+  let resultArray = resultNumber.toString().split("").reverse();
+
+  // Create the resulting linked list
+  let newLinkedList = new ListNode(parseInt(resultArray[0]));
+  let currentNode = newLinkedList;
+
+  for (let i = 1; i < resultArray.length; i++) {
+    currentNode.next = new ListNode(parseInt(resultArray[i]));
+    currentNode = currentNode.next;
+  }
+
+  return newLinkedList;
 };
