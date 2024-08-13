@@ -1,5 +1,5 @@
 // Binary Tree, Level Order Travesal: leet code #102
-// Given a vinary tree , return the level order travesal of its nodes' values. (fromt left to right, level by level)
+// Given a binary tree , return the level order travesal of its nodes' values. (fromt left to right, level by level)
 // Breadth First Search (BFS) using Queues  First In First Out
 
 var levelOrder = (root) => {
@@ -21,6 +21,7 @@ var levelOrder = (root) => {
 
   return levels;
 };
+
 // Time and Space O(N)
 
 // Depth of Binary Tree, LeetCode #104
@@ -36,6 +37,7 @@ let maxDepth = (root) => {
   if (!root) return 0;
   return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
+
 // Time Complexity O(n), Space COmplexity O(h) , height of a tree
 
 // Bredth First Search (BFS), using Queues. First in First out

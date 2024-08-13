@@ -199,29 +199,46 @@ const partition = (head, x) => {
 // 2.5 Sum Lists: You are given two non-negative linked lists representing two non-negative integers.
 // The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
-const addTwoNumbers = (l1, l2) => {
-  let dummyHead = new ListNode(0);
-  let current = dummyHead;
-  let p1 = l1,
-    p2 = l2;
-  let carry = 0;
+var addTwoNumbers = function (l1, l2) {
+  let on1 = l1;
+  let arr1 = [];
+  let on2 = l2;
+  let arr2 = [];
 
-  while (p1 !== null || p2 !== null) {
-    let x = p1 !== null ? p1.val : 0;
-    let y = p2 !== null ? p2.val : 0;
-    let sum = carry + x + y;
-    carry = Math.floor(sum / 10);
-    current.next = new ListNode(sum % 10);
-    current = current.next;
-    if (p1 !== null) p1 = p1.next;
-    if (p2 !== null) p2 = p2.next;
+  // Traverse the first linked list and store its values in arr1
+  while (on1) {
+    arr1.push(on1.val);
+    on1 = on1.next;
   }
 
-  if (carry > 0) {
-    current.next = new ListNode(carry);
+  // Traverse the second linked list and store its values in arr2
+  while (on2) {
+    arr2.push(on2.val);
+    on2 = on2.next;
   }
 
-  return dummyHead.next;
+  // Reverse the arrays to match the correct number format
+  arr1 = arr1.reverse();
+  arr2 = arr2.reverse();
+
+  // Convert the arrays to strings, then to numbers, and add them
+  let number1 = BigInt(arr1.join(""));
+  let number2 = BigInt(arr2.join(""));
+  let resultNumber = number1 + number2;
+
+  // Convert the result back to an array of digits (in reverse order)
+  let resultArray = resultNumber.toString().split("").reverse();
+
+  // Create the resulting linked list
+  let newLinkedList = new ListNode(parseInt(resultArray[0]));
+  let currentNode = newLinkedList;
+
+  for (let i = 1; i < resultArray.length; i++) {
+    currentNode.next = new ListNode(parseInt(resultArray[i]));
+    currentNode = currentNode.next;
+  }
+
+  return newLinkedList;
 };
 
 // Example usage:
@@ -264,8 +281,6 @@ const removeNthFromEnd = (head, n) => {
 
   // 3. handle head deleted, if leftIndex is pointing at the head, so we have to remove the head node
 };
-
-console.log("Hi, I'm Rottab, a Frontend Software Engineer...");
 
 // 2.8 Loop Detection: Detect Linked List Cycle
 
@@ -371,4 +386,33 @@ var addTwoNumbers = function (l1, l2) {
   }
 
   return newLinkedList;
+};
+
+// 21. Merge Two Sorted Lists
+// You are given the heads of two sorted linked lists list1 and list2.
+// Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+// Return the head of the merged linked list.
+
+var mergeTwoLists = function (list1, list2) {
+  let resultList = new ListNode(-1);
+  let current = resultList;
+
+  let on = list1;
+  let on2 = list2;
+
+  while (on && on2) {
+    if (on.val <= on2.val) {
+      current.next = on;
+      on = on.next;
+    } else {
+      current.next = on2;
+      on2 = on2.next;
+    }
+    current = current.next;
+  }
+
+  if (on) current.next = on;
+  else if (on2) current.next = on2;
+
+  return resultList.next;
 };

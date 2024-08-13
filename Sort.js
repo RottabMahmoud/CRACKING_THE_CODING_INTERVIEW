@@ -33,7 +33,6 @@ const mergeSort = (arr) => {
 let nums = [5, 2, 1, 6, 1, 6, 8];
 
 // console.log(mergeSort(nums)); // [1, 1, 2, 5, 6, 6, 8]
-console.log("SAP");
 
 const findBestMatch = (nikkiStart, nikkiEnd, employees) => {
   let bestMatch = null; // To store the best matching employee

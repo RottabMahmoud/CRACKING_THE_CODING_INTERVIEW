@@ -74,6 +74,7 @@ const smallestDifference = (arr1, arr2) => {
 
   return minDiff;
 };
+
 const array1 = [1, 3, 15, 11, 2];
 const array2 = [23, 127, 235, 19, 8];
 // console.log(`Smallest difference is: ${smallestDifference(array1, array2)}`);
