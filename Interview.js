@@ -113,6 +113,7 @@ console.log(findBestMatch(nikkiStart, nikkiEnd, employees)); // Output: Dave
 // Splitting at position 3: Left sum = 17 + 3 + 5 = 25, Right sum = 12 + 0 = 12, Difference = |25 - 12| = 13
 // Splitting at position 4: Left sum = 17 + 3 + 5 + 12 = 37, Right sum = 0, Difference = |37 - 0| = 37
 // In this example, splitting at positions 1 or 2 yields the smallest difference of 3.
+
 function findOptimalSplit(arr) {
   const n = arr.length;
   if (n < 2) return -1; // Ensure array has at least two elements
