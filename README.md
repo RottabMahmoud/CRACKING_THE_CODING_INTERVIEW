@@ -1,4 +1,4 @@
-**React,-DS & Algo:**j
+**React,-DS & Algo:**
 
 - Cracking the Coding Interview Book
 - React JS
