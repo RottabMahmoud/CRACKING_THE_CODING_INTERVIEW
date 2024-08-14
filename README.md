@@ -1,9 +1,11 @@
-React,-DS & Algo:
+**React,-DS & Algo:**
 
 - Cracking the Coding Interview Book
 - React JS
 - LeetCode Questions
------------------------------------------------------------------------------------------------------------------------------------------
+
+---
+
 **Your methodology for conquering a tech data structures and algorithms (DSA) interview.**
 
 1. **Clarify the Question:**
