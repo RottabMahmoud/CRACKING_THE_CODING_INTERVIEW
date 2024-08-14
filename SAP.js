@@ -1,4 +1,9 @@
-console.log("Hello SAP!");
+// Your task is based on the game Dominoes, write a prorgam to check whether a pool domino tiles can be aligned in a correct domino row, 
+// given a start and an end value, Each domino tile has two numbers on it. you can connect them by their ends if the number on the touhing 
+// halbes is the same. a tile can also be reversed to align it.
+// Wite a function with the following signature, hasSolution(start, end, pool). it takes a start value, an end value, and a pool of tiles. 
+// It should return true if all tiles can be aligned in a correct domino row from start to end value. if there is no possible solution, 
+// it should return false. It is not allowed to leave out a tile.
 
 const dominos = [
   { start: 6, end: 4 },
