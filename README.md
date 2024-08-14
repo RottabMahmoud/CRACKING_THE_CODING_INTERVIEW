@@ -4,7 +4,7 @@ React,-DS & Algo:
 - React JS
 - LeetCode Questions
 -----------------------------------------------------------------------------------------------------------------------------------------
-Your methodology for conquering a tech data structures and algorithms (DSA) interview is quite solid. Here’s a refined version with some additional details to make it even more effective:
+**Your methodology for conquering a tech data structures and algorithms (DSA) interview.**
 
 1. Clarify the Question:
 
