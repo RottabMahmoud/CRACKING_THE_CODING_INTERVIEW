@@ -4,25 +4,18 @@
 const App = () => {
   const [clickedBoxIds, setClickedBoxIds] = React.useState([]);
 
-  // Function to handle when a box is clicked
   const turnGreen = (id) => {
     setClickedBoxIds((prevIds) => [...prevIds, id]);
+
+    // Set a timeout to remove the color after 1 second
+    setTimeout(() => {
+      setClickedBoxIds((prevIds) => prevIds.filter((boxId) => boxId !== id));
+    }, 1000);
   };
 
-  // Function to determine if the box should be green or not
   const getClassName = (boxId) => {
     return clickedBoxIds.includes(boxId) ? "greenBox" : "box";
   };
-
-  // Effect to reverse the green color in the same order they were clicked
-  React.useEffect(() => {
-    if (clickedBoxIds.length > 0) {
-      const timer = setTimeout(() => {
-        setClickedBoxIds((prevIds) => prevIds.slice(1));
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [clickedBoxIds]);
 
   return (
     <div className="app">
@@ -72,6 +65,7 @@ const App = () => {
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));
+
 // .box {
 //     width: 100px;
 //     height: 100px;

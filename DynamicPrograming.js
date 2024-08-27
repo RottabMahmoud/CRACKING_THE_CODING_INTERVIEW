@@ -79,6 +79,17 @@ const maxProfit = (prices) => {
   return maxProfit;
 };
 
+// Leetcode #122
+// BUY AND SELL STOCK
+var maxProfitII = function (prices) {
+  let maxProfit = 0;
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] > prices[i - 1]) maxProfit += prices[i] - prices[i - 1];
+  }
+
+  return maxProfit;
+};
+
 // TIme O(n), space O(1)
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4, 10, 20, 4, 5, 6]));
