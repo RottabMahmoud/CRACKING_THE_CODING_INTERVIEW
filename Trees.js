@@ -310,3 +310,16 @@ const isSubTree = (T1, T2) => {
 // 4.12 Paths with Sums: You are given a binary tree in which each node contains an integer value (which might be positive or negative). Design an algorithm to count the
 // number of paths that sum to a given value. The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes
 // to childn nodes).
+
+// Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+
+// Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+
+var isSameTree = function (p, q) {
+  if (p === null && q === null) return true;
+  if (p === null || q === null) return false;
+
+  if (p.val !== q.val) return false;
+
+  return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+};
